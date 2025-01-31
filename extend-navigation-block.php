@@ -3,7 +3,8 @@
  * Plugin Name: Extend Navigation Block
  * Description: Extends the core navigation block with additional features
  * Version: 1.0.0
- * Author: Your Name
+ * Author: David Corradini
+ * Author URI: https://unprinted.ch
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: extend-navigation-block

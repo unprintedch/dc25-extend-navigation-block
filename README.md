@@ -58,3 +58,12 @@ Built using:
 ## License
 
 GPLv2 or later 
+
+## Say Hi! 👋
+
+Found a bug? Want to grab a coffee? Just want to say thanks?
+I'm David, a WordPress developer who loves clean code and typography.
+
+- 🌍 Website: [unprinted.ch](https://unprinted.ch)
+- 💻 GitHub: [@davidcorradini](https://github.com/unprintedch)
+
