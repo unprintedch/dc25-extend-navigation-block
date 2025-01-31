@@ -1,0 +1,127 @@
+// .wp-block-navigation__container.is-responsive.accordion-enabled .sub-menu {
+//     display: none;
+//     transition: max-height 0.3s ease;
+// }
+
+.wp-block-navigation__responsive-container.has-modal-open.is-menu-open {
+    background-color: red;
+}
+
+.wp-block-navigation.accordion-enabled {
+    .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-icon {
+        display: inline-block;
+    }
+}
+
+.wp-block-navigation.accordion-enabled {
+
+    // Style for off-canvas container when open
+    .wp-block-navigation__responsive-container.has-modal-open {
+        background-color: #f8f9fa;
+
+        .wp-block-navigation__responsive-container-content {
+            padding: 1rem 3rem 1rem 3rem;
+
+            // Increase font size for all navigation items in off-canvas
+            .wp-block-navigation-item__content {
+                font-size: 1.2em; // 20% bigger
+            }
+
+            // Style for menu items container
+            .wp-block-navigation__container {
+                gap: 0; // Remove default gap
+                width: 100%;
+            }
+
+            // Style for all menu items
+            .wp-block-navigation-item {
+                position: relative;
+                padding: 0.75rem 2rem 0.75rem 0; // Right padding for toggle button
+                border-bottom: 1px solid #e9ecef;
+                width: 100%;
+                align-items: start;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                // Link styles
+                .wp-block-navigation-item__content {
+                    padding: 0;
+                }
+            }
+
+            // Style for submenu toggle button
+            .wp-block-navigation-submenu__toggle {
+                position: absolute;
+                right: 0;
+                top: 6px;
+                margin: auto;
+                width: 2rem;
+                height: 2rem;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: transparent;
+                transition: transform 0.2s ease;
+                border: none;
+                outline: none;
+                -webkit-tap-highlight-color: transparent; // Remove mobile tap highlight
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+
+                svg {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                // Rotate arrow when submenu is open
+                &[aria-expanded="true"] {
+                    transform: rotate(180deg);
+                }
+            }
+
+            // Style for submenu container
+            .has-child .wp-block-navigation__submenu-container {
+                display: none;
+                padding: 0.5rem 0 0.5rem 0.5rem;
+                margin: 0;
+                position: static;
+                width: 100% !important; // Override inline styles
+                min-width: auto !important; // Override inline styles
+
+                &.is-open {
+                    display: block;
+                    animation: slideDown 0.2s ease-out;
+                }
+
+                // Remove border from submenu items
+                .wp-block-navigation-item {
+                    border-bottom: none;
+                    padding: 0.5rem 2rem 0.5rem 0;
+                }
+            }
+        }
+    }
+}
+
+// Animation for submenu opening
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// .wp-block-navigation__container.is-responsive.accordion-enabled .sub-menu.is-open {
+//     display: block;
+// }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "extend-navigation-block/navigation-extension",
+  "version": "1.0.0",
+  "title": "Navigation Block Extension",
+  "category": "theme",
+  "description": "Extends the core navigation block with additional features.",
+  "textdomain": "extend-navigation-block",
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+} 
