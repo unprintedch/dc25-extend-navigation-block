@@ -3,40 +3,41 @@
 //     transition: max-height 0.3s ease;
 // }
 
-.wp-block-navigation__responsive-container.has-modal-open.is-menu-open {
-    background-color: red;
-}
+
 
 .wp-block-navigation.accordion-enabled {
     .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-icon {
         display: inline-block;
     }
+
+    .wp-block-navigation__responsive-container-close {
+        top: 2rem ;
+        right: 2rem ;
+    }
+    
+
 }
 
 .wp-block-navigation.accordion-enabled {
-
-    // Style for off-canvas container when open
     .wp-block-navigation__responsive-container.has-modal-open {
         background-color: #f8f9fa;
 
         .wp-block-navigation__responsive-container-content {
-            padding: 1rem 3rem 1rem 3rem;
+            padding: 3rem 3rem 1rem 3rem;
 
-            // Increase font size for all navigation items in off-canvas
             .wp-block-navigation-item__content {
-                font-size: 1.2em; // 20% bigger
+                font-size: 1.2em;
+                font-weight: 600;
             }
 
-            // Style for menu items container
             .wp-block-navigation__container {
-                gap: 0; // Remove default gap
+                gap: 0;
                 width: 100%;
             }
 
-            // Style for all menu items
             .wp-block-navigation-item {
                 position: relative;
-                padding: 0.75rem 2rem 0.75rem 0; // Right padding for toggle button
+                padding: 0;
                 border-bottom: 1px solid #e9ecef;
                 width: 100%;
                 align-items: start;
@@ -45,13 +46,18 @@
                     border-bottom: none;
                 }
 
-                // Link styles
                 .wp-block-navigation-item__content {
-                    padding: 0;
+                    padding: 0.75rem 2rem 0.75rem 0;
+                    width: 100%;
+                    display: block;
+                }
+
+                .wp-block-navigation-submenu__toggle {
+                    right: 0;
+                    top: 0.75rem;
                 }
             }
 
-            // Style for submenu toggle button
             .wp-block-navigation-submenu__toggle {
                 position: absolute;
                 right: 0;
@@ -67,7 +73,7 @@
                 transition: transform 0.2s ease;
                 border: none;
                 outline: none;
-                -webkit-tap-highlight-color: transparent; // Remove mobile tap highlight
+                -webkit-tap-highlight-color: transparent;
 
                 &:focus {
                     outline: none;
@@ -79,37 +85,37 @@
                     height: 12px;
                 }
 
-                // Rotate arrow when submenu is open
                 &[aria-expanded="true"] {
                     transform: rotate(180deg);
                 }
             }
 
-            // Style for submenu container
             .has-child .wp-block-navigation__submenu-container {
                 display: none;
                 padding: 0.5rem 0 0.5rem 0.5rem;
                 margin: 0;
                 position: static;
-                width: 100% !important; // Override inline styles
-                min-width: auto !important; // Override inline styles
+                width: 100% !important;
+                min-width: auto !important;
 
                 &.is-open {
                     display: block;
                     animation: slideDown 0.2s ease-out;
                 }
 
-                // Remove border from submenu items
                 .wp-block-navigation-item {
                     border-bottom: none;
-                    padding: 0.5rem 2rem 0.5rem 0;
+                    padding: 0;
+                    a{
+                        font-size: 1em;
+                        font-weight: 100;
+                    }
                 }
             }
         }
     }
 }
 
-// Animation for submenu opening
 @keyframes slideDown {
     from {
         opacity: 0;
